@@ -207,3 +207,11 @@ endif()
 if (MAKE_EXAMPLES)
     add_subdirectory(${PROJECT_SOURCE_DIR}/examples)
 endif()
+
+set(CONF_INCLUDE_DIRS "${PROJECT_SOURCE_DIR}/include" "${PROJECT_BINARY_DIR}")
+configure_file(AIToolboxConfig.cmake.in AIToolboxConfig.cmake @ONLY)
+configure_file(AIToolboxConfigVersion.cmake.in AIToolboxConfigVersion.cmake @ONLY)
+export(TARGETS AIToolboxMDP
+  FILE "${PROJECT_BINARY_DIR}/AIToolboxTargets.cmake")
+#export(TARGETS AIToolbox AIToolboxFMDP AIToolboxMDP AIToolboxPOMDP
+#  FILE "${PROJECT_BINARY_DIR}/AIToolboxTargets.cmake")

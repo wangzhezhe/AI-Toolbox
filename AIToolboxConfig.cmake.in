@@ -1,0 +1,15 @@
+# - Config file for the AIToolbox package
+# It defines the following variables
+#  AIToolbox_INCLUDE_DIRS - include directories for AIToolbox
+#  AIToolbox_LIBRARIES    - libraries to link against
+#  AIToolbox_EXECUTABLE   - the bar executable
+
+# Compute paths
+get_filename_component(AIToolbox_CMAKE_DIR "${CMAKE_CURRENT_LIST_FILE}" PATH)
+set(AIToolbox_INCLUDE_DIRS "@CONF_INCLUDE_DIRS@")
+
+include("${AIToolbox_CMAKE_DIR}/AIToolboxTargets.cmake")
+
+# These are IMPORTED targets created by AIToolboxTargets.cmake
+set(AIToolbox_LIBRARIES AIToolbox)
+
